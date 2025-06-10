@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 ?>
 
@@ -18,10 +18,9 @@ session_start();
     </a>
     <ul class="navbar__links">
         <li class="active"><a href="index.php">Accueil</a></li>
-        <li><a href="#">À propos</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="#">Panier</a></li>
         <?php if (isset($_SESSION['userID'])): ?>
-        <li><a href="php/profil.php">Mon Profil</a></li>
+        <li><a href="php/profile.php">Mon Profil</a></li>
         <li><a href="php/logout.php">Déconnexion</a></li>
         <?php else: ?>
         <li><a href="php/connection.php">Connexion</a></li>
