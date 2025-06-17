@@ -3,7 +3,7 @@
 setlocal
 
 :: Chemin du dossier local
-set LOCAL_PATH="C:\Users\elvin\Desktop\4 - code\l_epi_dore\l_epi_dore_site_ecole"
+set LOCAL_PATH="C:\Users\elvin\Desktop\4 - Codes\epi_dore\l_epi_dore\l_epi_dore_site"
 
 :: Identifiants du serveur distant
 set REMOTE_USER=mouyart

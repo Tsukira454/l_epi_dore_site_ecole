@@ -17,7 +17,7 @@ if(isset($_POST['nom'])) {
         if(!filter_var($email, FILTER_VALIDATE_EMAIL)) throw new Exception("Email invalide");
         require_once(__DIR__ . "/dbConnect.php");
         
-        $request = $dbEpidore->prepare("SELECT id FROM clients WHERE email = :email");
+        $request = $dbEpidore->prepare("SELECT id_clients FROM clients WHERE email = :email");
         $request->execute([":email" => $email]);
         if ($request->rowCount() > 0) {
             $errorMessage = "Un compte avec cet email existe déjà.";
