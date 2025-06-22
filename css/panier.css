@@ -164,7 +164,10 @@ form {
 
 .btn {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 25px;
 }
 
 .btn button {
@@ -173,6 +176,7 @@ form {
     border: none;
     padding: 12px 25px;
     border-radius: 15px;
+    margin-top: 20px;
     cursor: pointer;
     font-weight: bold;
     transition: background 0.3s ease;
@@ -182,6 +186,18 @@ form {
 .btn button:hover {
     background: #ff7000;
 }
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-align: left;
+    max-width: 400px;
+}
+.checkbox-group label {
+    font-size: 14px;
+}
+
 
 .error {
     color: red;
@@ -319,6 +335,7 @@ form {
     font-size: 22px;
     font-weight: bold;
     text-align: center;
+    margin-bottom: 25px;
     color: #444;
     background-color: #fff5e6;
     padding: 15px;
@@ -384,4 +401,19 @@ form {
 .payment-option input[type="radio"]:checked + label {
     border-color: #ff914d;
     box-shadow: 0 0 10px rgba(255, 145, 77, 0.4);
+}
+
+.adresse-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.adresse-group input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 14px;
+    background-color: #fff;
 }
