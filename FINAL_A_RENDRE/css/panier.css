@@ -1,0 +1,419 @@
+/* RESET + GLOBAL */
+h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f3c5bd, #ffe4b5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    flex-direction: column;
+}
+
+/* PANIER GRID */
+.panier-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;            /* espace entre les cartes */
+  justify-content: center; /* centrer les lignes */
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+
+}
+
+.panier-item {
+  flex: 1 1 calc(50% - 20px);
+  max-width: calc(50% - 20px);
+  box-sizing: border-box;
+  background-color: #fff8f0;
+  border: 1px solid #e2cfcf;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.panier-item:hover {
+    transform: translateY(-4px);
+}
+
+.panier-item p {
+    font-size: 15px;
+    color: #333;
+    margin: 0;
+}
+
+.panier-item .prix {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.panier-item .prix p {
+    font-weight: bold;
+    font-size: 17px;
+}
+
+/* BOUTONS PANIER */
+.btn-supprimer {
+    background-color: #3d3b3b;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 6px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-supprimer:hover {
+    background-color: #141414;
+}
+
+.btn-plus {
+    background-color: #2d702d;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 6px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-plus:hover {
+    background-color: #234d19;
+}
+
+.btn-moins {
+    background-color: #ff5757;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 6px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-moins:hover {
+    background-color: #e64545;
+}
+
+/* FORMULAIRES, BOUTONS, ETC. (TON CODE) */
+.main_form {
+    background: white;
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    width: 90%;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.main label,
+.second label {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.main input,
+.second input[type="checkbox"] {
+    padding: 10px;
+    border-radius: 12px;
+    border: 1.5px solid #ccc;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.main input:focus {
+    outline: none;
+    border-color: #ff914d;
+    box-shadow: 0 0 5px rgba(255, 145, 77, 0.5);
+}
+
+.second {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.btn button {
+    background: #ff914d;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 15px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease;
+    font-size: 16px;
+}
+
+.btn button:hover {
+    background: #ff7000;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-align: left;
+    max-width: 400px;
+}
+.checkbox-group label {
+    font-size: 14px;
+}
+
+
+.error {
+    color: red;
+    font-size: 14px;
+    margin-top: 15px;
+    text-align: center;
+    animation: shake 0.3s ease-in-out;
+}
+
+/* HOME ICON & LIENS */
+.link {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 16px;
+    color: #444;
+}
+
+.link a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.link a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: -2px;
+    background-color: #007bff;
+    transition: width 0.3s ease;
+}
+
+.link a:hover {
+    color: #0056b3;
+}
+
+.link a:hover::after {
+    width: 100%;
+}
+
+.home-icon {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 45px;
+    height: 45px;
+    background-color: #ff914d;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.home-icon:hover {
+    transform: scale(1.15);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+.home-icon img {
+    width: 28px;
+    height: 28px;
+}
+
+.home-icon[aria-label]:hover::after {
+    content: attr(aria-label);
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ff914d;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 8px;
+    white-space: nowrap;
+    font-size: 14px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    z-index: 1001;
+}
+
+.home-icon::after {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+}
+
+/* Ajustement responsive : deux colonnes sur écrans moyens */
+@media (max-width: 900px) {
+  .panier-item {
+    flex: 1 1 calc(50% - 20px);
+    max-width: calc(50% - 20px);
+  }
+}
+
+/* Une colonne sur petits écrans */
+@media (max-width: 600px) {
+  .panier-item {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+
+/* TOTAL SECTION */
+.total {
+    margin-top: 30px;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 25px;
+    color: #444;
+    background-color: #fff5e6;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* METHODS SECTION */
+.methods {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.methods label {
+    display: block;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Payment radio wrapper */
+.payment-options {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.payment-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff8f0;
+    padding: 20px;
+    border: 2px solid transparent;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+    position: relative;
+}
+
+.payment-option:hover {
+    transform: scale(1.05);
+}
+
+.payment-option input[type="radio"] {
+    display: none;
+}
+
+.payment-option img {
+    width: 150px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.payment-option span {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+}
+
+.payment-option input[type="radio"]:checked + label {
+    border-color: #ff914d;
+    box-shadow: 0 0 10px rgba(255, 145, 77, 0.4);
+}
+
+.adresse-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.adresse-group input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 14px;
+    background-color: #fff;
+}
